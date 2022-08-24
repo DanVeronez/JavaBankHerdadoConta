@@ -1,6 +1,6 @@
-public class Conta {
+public abstract class Conta { //Classe conta não deveria existir, por isso deixando-a como abstrata ninguem mais poderá criar um objeto dessa classe
 
-	private double 	saldo;
+	protected double 	saldo;
 	private int 	agencia;
 	private int 	numero;
 	private Cliente titular;
@@ -18,9 +18,7 @@ public class Conta {
 		
 	}
 	// ************** METODOS ****************
-	public void deposita(double valor) {
-		this.saldo += valor;
-	}
+	public abstract void deposita(double valor); //Metodo Abstrato, deve ser implementado apenas pelos filhos e sobrescrito.
 
 	public boolean saca(double valorDoSaque) {
 		if (this.saldo >= valorDoSaque) {
